@@ -25,4 +25,4 @@ export class Decrease implements Action {
     }
 }
 
-
+export type UserActionsType = Change | Inscrease | Decrease;
