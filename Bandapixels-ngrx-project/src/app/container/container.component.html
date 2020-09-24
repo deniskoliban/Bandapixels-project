@@ -1,5 +1,6 @@
 <div class="num-container">
-    <div class="outputNum" [ngClass]="{'blueBorder': number > 0, redBorder: true  }" *ngFor="let number of numbers">
+    <div class="outputNum" [ngClass]="{'blueBorder': number > 0, redBorder: number < 0  }" *ngFor="let number of numbers">
       <app-num-renderer  [num]="number"></app-num-renderer>
     </div>
+    <button (click)="startCount()">Start</button>
 </div>

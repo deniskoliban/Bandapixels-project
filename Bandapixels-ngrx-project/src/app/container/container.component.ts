@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { Numbers } from '../store/app.reducer';
-import * as AppActions from '../store/app.actions';
+import { Observable, Subscription } from 'rxjs';
+import { Numbers } from '../store/numbers.reducer';
+import * as AppActions from '../store/numbers.actions';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-container',
@@ -10,7 +11,8 @@ import * as AppActions from '../store/app.actions';
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent implements OnInit {
-
+  interval: Observable<number>;
+  intervalSubscript: Subscription;
   numbers: number[];
 
   constructor(private store: Store<{numbers: Numbers}>) { }
@@ -20,6 +22,15 @@ export class ContainerComponent implements OnInit {
     numbersObserv.subscribe(numbersObj => {
     this.numbers = Object.values(numbersObj);
     });
+  }
+
+  startCount() {
+    if (!this.intervalSubscript) {
+      this.interval = interval(1000);
+      this.intervalSubscript = this.interval.subscribe(() => {
+        this.store.dispatch(AppActions.change());
+      });
+    }
   }
 
 }
