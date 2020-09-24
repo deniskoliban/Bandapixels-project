@@ -32,6 +32,7 @@ const numbersReducer = createReducer(
             ...editState
         });
     }),
+    on(AppAction.reset, (state: Numbers) => ({ ...initialState})),
 
 );
 

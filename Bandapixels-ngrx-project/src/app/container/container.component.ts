@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { Numbers } from '../store/numbers.reducer';
-import * as AppActions from '../store/numbers.actions';
+import * as numbersActions from '../store/numbers.actions';
 import { interval } from 'rxjs';
 
 @Component({
@@ -28,7 +28,7 @@ export class ContainerComponent implements OnInit {
     if (!this.intervalSubscript) {
       this.interval = interval(1000);
       this.intervalSubscript = this.interval.subscribe(() => {
-        this.store.dispatch(AppActions.change());
+        this.store.dispatch(numbersActions.change());
       });
     }
   }
@@ -38,6 +38,10 @@ export class ContainerComponent implements OnInit {
       this.intervalSubscript.unsubscribe();
       this.intervalSubscript = null;
     }
+  }
+
+  resetCount() {
+    this.store.dispatch(numbersActions.reset());
   }
 
 }
