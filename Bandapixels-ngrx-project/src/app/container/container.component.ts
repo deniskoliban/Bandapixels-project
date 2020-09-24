@@ -11,7 +11,6 @@ import { interval } from 'rxjs';
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent implements OnInit {
-  interval: Observable<number>;
   intervalSubscript: Subscription;
   numbers: number[];
 
@@ -26,22 +25,26 @@ export class ContainerComponent implements OnInit {
 
   startCount() {
     if (!this.intervalSubscript) {
-      this.interval = interval(1000);
-      this.intervalSubscript = this.interval.subscribe(() => {
+      this.intervalSubscript = interval(1000).subscribe(() => {
         this.store.dispatch(numbersActions.change());
       });
     }
   }
 
-  stopCount() {
+  resetInterval() {
     if (this.intervalSubscript) {
       this.intervalSubscript.unsubscribe();
       this.intervalSubscript = null;
     }
   }
 
+  stopCount() {
+    this.resetInterval();
+  }
+
   resetCount() {
     this.store.dispatch(numbersActions.reset());
+    this.resetInterval();
   }
 
 }
