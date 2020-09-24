@@ -5,8 +5,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { nubersReducer } from './store/app.reducer';
+import { appReducer } from './store/app.reducer';
 import { ContainerComponent } from './container/container.component';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ContainerComponent } from './container/container.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({numbers: nubersReducer} )
+    StoreModule.forRoot({numbers: appReducer} ),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
