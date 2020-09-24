@@ -8,7 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { appReducer } from './store/app.reducer';
 import { ContainerComponent } from './container/container.component';
 import { EffectsModule } from '@ngrx/effects';
-import { NameEffects } from './store/app.effects';
+import { NumbersEffects } from './store/app.effects';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { NameEffects } from './store/app.effects';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({numbers: appReducer} ),
-    EffectsModule.forRoot([NameEffects])
+    EffectsModule.forRoot([NumbersEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

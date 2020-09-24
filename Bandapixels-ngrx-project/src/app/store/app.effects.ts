@@ -7,15 +7,9 @@ import * as AppActions from './app.actions';
 @Injectable({
     providedIn: 'root'
 })
-export class NameEffects {
-    constructor(private actions$: Actions, private store: Store) {}
+export class NumbersEffects {
+    constructor() {}
 
-    effectName$ = createEffect(
-        () => this.actions$.pipe(
-          ofType(AppActions.CHANGE),
-          switchMap(() => [AppActions.inscrease(), AppActions.decrease(), AppActions.decrease()])
-        )
-      );
 
 }
 
