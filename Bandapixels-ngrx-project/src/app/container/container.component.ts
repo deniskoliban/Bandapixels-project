@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Numbers } from '../store/app.reducer';
 
 @Component({
   selector: 'app-container',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContainerComponent implements OnInit {
 
-  constructor() { }
+  numbers: number[] ;
 
-  ngOnInit() {
+  constructor(private store: Store<{numbers: Numbers}>) { }
+
+  ngOnInit(): void {
+    const numbersObserv = this.store.select('numbers');
+    numbersObserv.subscribe(numbersObj => {
+    this.numbers = Object.values(numbersObj);
+    });
+    console.log(this.numbers);
   }
 
 }
