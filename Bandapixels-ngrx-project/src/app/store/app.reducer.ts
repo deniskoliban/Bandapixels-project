@@ -1,8 +1,13 @@
 
 import * as AppAction from './app.actions';
 
+export interface Numbers {
+    firstNum: number;
+    secondNum: number;
+}
 
-const initialState = {
+
+const initialState: Numbers = {
     firstNum: -5,
     secondNum: 10
 };
