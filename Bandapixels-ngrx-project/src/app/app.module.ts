@@ -1,3 +1,4 @@
+import { NumRendererComponent } from './container/num-renderer/num-renderer.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,9 +9,10 @@ import { nubersReducer } from './store/app.reducer';
 import { ContainerComponent } from './container/container.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
-      ContainerComponent
+    ContainerComponent,
+    NumRendererComponent,
    ],
   imports: [
     BrowserModule,

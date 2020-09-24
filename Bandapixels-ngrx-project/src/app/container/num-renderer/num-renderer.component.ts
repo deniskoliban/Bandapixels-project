@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-num-renderer',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./num-renderer.component.scss']
 })
 export class NumRendererComponent implements OnInit {
+  @Input() num: number;
 
   constructor() { }
 
