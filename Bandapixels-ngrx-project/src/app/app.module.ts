@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { nubersReducer } from './store/app.reducer';
+import { ContainerComponent } from './container/container.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [	
+    AppComponent,
+      ContainerComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
