@@ -33,4 +33,11 @@ export class ContainerComponent implements OnInit {
     }
   }
 
+  stopCount() {
+    if (this.intervalSubscript) {
+      this.intervalSubscript.unsubscribe();
+      this.intervalSubscript = null;
+    }
+  }
+
 }
