@@ -19,7 +19,6 @@ export class ContainerComponent implements OnInit {
     numbersObserv.subscribe(numbersObj => {
     this.numbers = Object.values(numbersObj);
     });
-    console.log(this.numbers);
   }
 
 }
