@@ -10,6 +10,3 @@ export const inscrease = createAction(INSCREASE);
 export const decrease = createAction(DECREASE);
 export const change = createAction(CHANGE);
 
-
-
-//  export type UserActionsType = Change | Inscrease | Decrease;

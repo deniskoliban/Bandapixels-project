@@ -1,7 +1,7 @@
 
 import { state } from '@angular/animations';
 import { Action, createReducer, on } from '@ngrx/store';
-import * as AppAction from './app.actions';
+import * as AppAction from './numbers.actions';
 
 export interface Numbers {
         firstNum: number;
@@ -26,7 +26,7 @@ const numbersReducer = createReducer(
     }),
     on(AppAction.decrease, (state: Numbers) => {
         const editState = { ...state };
-        editState.firstNum--;
+        editState.secondNum--;
         return ({
             ...state,
             ...editState
@@ -36,7 +36,8 @@ const numbersReducer = createReducer(
 );
 
 
-export function appReducer(state: Numbers | undefined, action: Action) {
+export function numbersCountReducer(state: Numbers | undefined, action: Action) {
     return numbersReducer(state, action);
   }
+
 

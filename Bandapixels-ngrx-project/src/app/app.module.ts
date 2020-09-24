@@ -5,10 +5,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { appReducer } from './store/app.reducer';
+import { numbersCountReducer } from './store/numbers.reducer';
 import { ContainerComponent } from './container/container.component';
 import { EffectsModule } from '@ngrx/effects';
-import { NumbersEffects } from './store/app.effects';
+import { NumbersEffects } from './store/numbers.effects';
+import { appReducer } from './app.reducer';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { NumbersEffects } from './store/app.effects';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({numbers: appReducer} ),
+    StoreModule.forRoot(appReducer),
     EffectsModule.forRoot([NumbersEffects])
   ],
   providers: [],

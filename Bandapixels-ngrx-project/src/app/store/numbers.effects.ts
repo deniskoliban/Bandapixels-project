@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { map, mergeMap, catchError, switchMap } from 'rxjs/operators';
-import * as AppActions from './app.actions';
+import * as AppActions from './numbers.actions';
 
 @Injectable({
     providedIn: 'root'
