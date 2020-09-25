@@ -1,5 +1,5 @@
 
-import { Action, createAction } from '@ngrx/store';
+import { createAction } from '@ngrx/store';
 
 export const CHANGE = 'CHANGE';
 export const INSCREASE = 'INSCREASE';

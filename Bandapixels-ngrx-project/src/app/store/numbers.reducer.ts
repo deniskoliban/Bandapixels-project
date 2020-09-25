@@ -1,17 +1,15 @@
-
-import { state } from '@angular/animations';
 import { Action, createReducer, on } from '@ngrx/store';
 import * as AppAction from './numbers.actions';
 
 export interface Numbers {
-        firstNum: number;
-        secondNum: number;
+    firstNum: number;
+    secondNum: number;
 }
 
 
 const initialState: Numbers = {
-        firstNum: -5,
-        secondNum: 10
+    firstNum: -5,
+    secondNum: 10
 };
 
 const numbersReducer = createReducer(

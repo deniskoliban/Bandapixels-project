@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Numbers } from '../store/numbers.reducer';
 import * as numbersActions from '../store/numbers.actions';
 import { interval } from 'rxjs';
